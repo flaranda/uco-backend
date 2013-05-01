@@ -20,7 +20,7 @@ before do
 end
 
 get '/' do
-  "UCO-BACKEND"
+  "UCO-BACKEND\n\nPeticion de prueba: uco-backend.herokuapp.com/games/puzzle/new"
 end
 
 get '/games/puzzle/new' do
@@ -36,7 +36,7 @@ end
 get '/games/rasca/new' do
   {
     rasca: {
-      
+
     }
   }.to_json
 end
