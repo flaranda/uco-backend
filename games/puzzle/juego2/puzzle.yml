@@ -1,0 +1,7 @@
+puzzle:
+  difficult: 2
+  time: 120
+win:
+  message: Has ganado
+lose:
+  message: Has perdido

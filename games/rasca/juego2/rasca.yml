@@ -1,0 +1,9 @@
+rasca:
+  layer: 2
+  interest:
+    point:
+      x: 200
+      y: 200
+    width: 500
+    height: 500
+    percent: 70
