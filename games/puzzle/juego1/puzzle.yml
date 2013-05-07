@@ -1,5 +1,5 @@
 puzzle:
-  difficult: 1
+  difficult: 3
   time: 60
 win:
   message: Has ganado

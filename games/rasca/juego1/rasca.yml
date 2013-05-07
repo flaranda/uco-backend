@@ -1,5 +1,6 @@
 rasca:
   layer: 1
+  time: 20
   interest:
     point:
       x: 0
@@ -7,3 +8,7 @@ rasca:
     width: 500
     height: 500
     percent: 50
+win:
+  message: Has ganado
+lose:
+  message: Has perdido
