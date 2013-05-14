@@ -5,8 +5,8 @@ rasca:
     point:
       x: 0
       y: 0
-    width: 1200
-    height: 1703
+    width: 200
+    height: 200
     percent: 80
 win:
   message: Has ganado
