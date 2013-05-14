@@ -1,0 +1,14 @@
+rasca:
+  layer: 1
+  time: 50
+  interest:
+    point:
+      x: 0
+      y: 0
+    width: 1200
+    height: 1703
+    percent: 80
+win:
+  message: Has ganado
+lose:
+  message: Has perdido
