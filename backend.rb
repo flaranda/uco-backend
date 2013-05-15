@@ -27,6 +27,10 @@ helpers do
     game["#{ type }"]
   end
 
+  def load_test_game( type, level, timeout )
+    load_random_game(type)
+  end
+
   def load_game_result( type, subid, result )
     game = YAML.load_file( "games/#{ type }/juego#{ subid }/#{ type }.yml" )
 
@@ -75,7 +79,11 @@ end
 get '/games/new' do
   type = determine_game( params['id'].to_i )
 
-  load_random_game( type ).to_json
+  if params['level'] and params['timeout']
+    load_test_game( type, params['level'].to_i, params['timeout'].to_i ).to_json
+  else
+    load_random_game( type ).to_json
+  end
 end
 
 get '/games/result' do
