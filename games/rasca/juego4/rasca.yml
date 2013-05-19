@@ -3,10 +3,10 @@ rasca:
   time: 90
   interest:
     point:
-      x: 300
-      y: 200
-    width: 200
-    height: 200
+      x: 230
+      y: 260
+    width: 400
+    height: 400
     percent: 75
 win:
   message: Has ganado
