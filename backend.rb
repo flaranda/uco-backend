@@ -28,7 +28,26 @@ helpers do
   end
 
   def load_test_game( type, level, timeout )
-    load_random_game(type)
+    if level == 1
+      if timeout == 1
+        subid = 1
+
+      else
+        subid = 2
+      end
+    else
+      if timeout == 1
+        subid = 3
+      else
+        subid = 4
+      end
+    end
+
+    game = YAML.load_file( "games/#{type}/juego#{subid}/#{type}.yml" )
+    game["#{ type }"]["#{ type == 'rasca' ? 'foreground': 'image' }"] = load64( "games/#{ type }/juego#{subid}/image.jpg" )
+    game["#{ type }"]['background'] = load64( "games/#{ type }/juego#{subid}/background.jpg" ) if type == 'rasca'
+    game["#{ type }"]['subid'] = subid
+    game["#{ type }"][
   end
 
   def load_game_result( type, subid, result )
@@ -79,11 +98,13 @@ end
 get '/games/new' do
   type = determine_game( params['id'].to_i )
 
-  if params['level'] and params['timeout']
-    load_test_game( type, params['level'].to_i, params['timeout'].to_i ).to_json
-  else
-    load_random_game( type ).to_json
-  end
+  load_random_game( type ).to_json
+end
+
+get 'games/test/new' do
+  type = determine_game( params['id'].to_i )
+
+  load_test_game( type, params['level'].to_i, params['timeout'].to_i ).to_json
 end
 
 get '/games/result' do
