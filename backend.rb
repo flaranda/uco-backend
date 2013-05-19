@@ -103,6 +103,7 @@ end
 
 get '/games/test/new' do
   type = determine_game( params['id'].to_i )
+  
 
   load_test_game( type, params['level'].to_i, params['timeout'].to_i ).to_json
 end
