@@ -47,7 +47,7 @@ helpers do
     game["#{ type }"]["#{ type == 'rasca' ? 'foreground': 'image' }"] = load64( "games/#{ type }/juego#{subid}/image.jpg" )
     game["#{ type }"]['background'] = load64( "games/#{ type }/juego#{subid}/background.jpg" ) if type == 'rasca'
     game["#{ type }"]['subid'] = subid
-    game["#{ type }"][
+    game["#{ type }"]
   end
 
   def load_game_result( type, subid, result )
@@ -101,7 +101,7 @@ get '/games/new' do
   load_random_game( type ).to_json
 end
 
-get 'games/test/new' do
+get '/games/test/new' do
   type = determine_game( params['id'].to_i )
 
   load_test_game( type, params['level'].to_i, params['timeout'].to_i ).to_json
