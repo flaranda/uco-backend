@@ -47,7 +47,7 @@ helpers do
     game["#{ type }"]["#{ type == 'rasca' ? 'foreground': 'image' }"] = load64( "games/#{ type }/juego#{subid}/image.jpg" )
     game["#{ type }"]['background'] = load64( "games/#{ type }/juego#{subid}/background.jpg" ) if type == 'rasca'
     game["#{ type }"]['subid'] = subid
-    game["#{ type }"][
+    game["#{ type }"]
   end
 
   def load_game_result( type, subid, result )
